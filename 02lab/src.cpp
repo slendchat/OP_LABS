@@ -3,7 +3,6 @@
 
 int main() {
     int n=0,a=0,b=0,c=0;
-
     scanf("%d",&n);
     int* arr1 = new int[n];
     int* arr2 = new int[n];
@@ -14,24 +13,16 @@ int main() {
     }
     for (int i = 0; i < n; i++)
     {
-        printf("arr1[%d]|arr2[%d]\n",arr1[i],arr2[i]);
-    }
-    for (int i = 0; i < n; i++)
-    {
-        if (arr1[i]<arr2[i])
-        {
+        if (arr1[i]<arr2[i]){
             a++;
         }
-        else if(arr1[i]==arr2[i])
-        {
+        else if(arr1[i]==arr2[i]){
             b++;
         }
-        else
-        {
+        else{
             c++;
         }
     }
-    printf("a[%d] b[%d] c[%d]\n",a,b,c);
-    
+    printf("arr1[i]<arr2[i]:\ta[%d]\narr1[i]==arr2[i]:\tb[%d]\narr1[i]>arr2[i]:\tc[%d]\n",a,b,c);
     return 0;
 }
