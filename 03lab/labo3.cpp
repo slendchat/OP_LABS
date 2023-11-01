@@ -1,5 +1,7 @@
 #include <iostream>
 
+const int N = 255;
+
 void moveNullTerm(char* s, int size)
 {
     for (int i = size-2; i >=0; i--)
@@ -11,8 +13,6 @@ void moveNullTerm(char* s, int size)
         }
     }
 }
-
-
 
 void arrayShiftLeft(char* s,int cnt, int size)
 {   
@@ -27,17 +27,6 @@ void arrayShiftLeft(char* s,int cnt, int size)
     }
     s[size-1-cnt]='\0';
 }
-
-// void arrayShiftRight(char* s,int cnt, int size)
-// {   
-//     for (int i = 0; i < cnt; i++)
-//     {
-//         for (int j = size-3; j>=0; j--)
-//         {
-//             s[j+1] = s[j];
-//         }
-//     }
-// }
 
 void prefSpaceRem(char* s, int size)
 {
@@ -56,23 +45,6 @@ void prefSpaceRem(char* s, int size)
     arrayShiftLeft(s,cnt,size);
 }
 
-// void postfixSpaceRemove(char* s, int size)
-// {
-//     int cnt=0;
-//     for (int i = 0; s[i]!='\0'; i++)
-//     {
-//         if (s[i]==' ')
-//         {
-//             cnt++;  
-//         }
-//         else if(s[i]!=' ')
-//         {
-//             cnt=0;
-//         }
-//     }
-//     arrayShiftRight(s,cnt,size);
-// }
-
 void postSpaceRem(char* s, int size)
 {
     moveNullTerm(s,size);
@@ -86,7 +58,8 @@ void postPrefSpaceRem(char* s, int size)
 
 int main()
 {
-    char s[]="  hello  ";
+    char s[N]="   HELLLOOOOO       ";
+    //std::cin>>s;
     std::cout<<s<<std::endl;
     prefSpaceRem(s,sizeof(s)/sizeof(s[0]));
     postSpaceRem(s,sizeof(s)/sizeof(s[0]));
