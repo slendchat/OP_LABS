@@ -1,6 +1,5 @@
 #include <iostream>
-
-const int N = 255;
+#include <stdio.h>
 
 void moveNullTerm(char* s, int size)
 {
@@ -58,12 +57,18 @@ void postPrefSpaceRem(char* s, int size)
 
 int main()
 {
-    char s[N]="   HELLLOOOOO       ";
-    //std::cin>>s;
+    int len;
+    std::cout<<"Type the len of string\n";
+    std::cin>>len;
+    char* s = new char[len];
+
+    std::cin.ignore(); //clear the buffer
+    std::cin.getline(s, len);
+
     std::cout<<s<<std::endl;
-    prefSpaceRem(s,sizeof(s)/sizeof(s[0]));
-    postSpaceRem(s,sizeof(s)/sizeof(s[0]));
-    postPrefSpaceRem(s,sizeof(s)/sizeof(s[0]));
+    postSpaceRem(s,len);
+    prefSpaceRem(s,len);
+    postPrefSpaceRem(s,len);
     std::cout<<s<<std::endl;
-    
+    delete[] s;
 }
